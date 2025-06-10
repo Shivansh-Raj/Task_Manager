@@ -751,14 +751,14 @@ const App: React.FC = () => {
                             {row.getVisibleCells().map(cell => (
                               <td key={cell.id} className="px-4 py-2">
                                 <input
-                                  value={cell.getValue() as string | number}
-                                  onChange={e =>
-                                    table.options.meta?.updateData(
-                                      row.index,
-                                      cell.column.id,
-                                      e.target.value
-                                    )
-                                  }
+                                  // value={cell.getValue() as string | number}
+                                  // onChange={e =>
+                                  //   table.options.meta?.updateData(
+                                  //     row.index,
+                                  //     cell.column.id,
+                                  //     e.target.value
+                                  //   )
+                                  // }
                                   className="bg-transparent border-b border-gray-600 focus:outline-none focus:border-blue-500 w-full text-white"
                                 />
                               </td>
@@ -774,7 +774,7 @@ const App: React.FC = () => {
                       {renderChart()}
                         
                     </ResponsiveContainer>
-                    {/* <div className="flex flex-col items-center justify-center h-full text-center text-white bg-[#1A1A1A] border border-[#00BC91] rounded-xl p-6 shadow-md">
+                    <div className="flex flex-col items-center justify-center h-full text-center text-white bg-[#1A1A1A] border border-[#00BC91] rounded-xl p-6 shadow-md">
                       <AlertTriangle className="w-8 h-8 text-[#00BC91] mb-3" />
                       <div className="text-lg font-semibold text-[#00BC91] mb-1">
                         Chart Render Error
@@ -785,7 +785,7 @@ const App: React.FC = () => {
                       <p className="text-xs text-gray-500 mt-1">
                         Please run the project locally to view the charts.
                       </p>
-                    </div> */}
+                    </div>
                   </div>
                 </div>
                 </div>
