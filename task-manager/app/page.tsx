@@ -1,6 +1,7 @@
 'use client';
 import React  from "react";
 import {useState, useEffect, useRef, useMemo} from "react";
+import Image from "next/image";
 import * as Icon from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import { FileText, AlertTriangle , ArrowLeft, MessageCircle, UploadCloud, Users, PenTool, SendHorizonal, MoreVertical, StickyNote, Highlighter, Eraser, Undo2, FileEdit, PenLine, Save, Trash2 } from "lucide-react";
@@ -41,9 +42,9 @@ type ChartData = {
 
 
 const users = [
-  { id: 1, name: "John Doe", avatar: "https://placehold.co/400", status: "Online" },
-  { id: 2, name: "Jane Smith", avatar: "https://placehold.co/400", status: "Offline" },
-  { id: 3, name: "Alice Ray", avatar: "https://placehold.co/400", status: "Online" },
+  { id: 1, name: "John Doe", avatar: "https://i.pravatar.cc/150?img=11", status: "Online" },
+  { id: 2, name: "Jane Smith", avatar: "https://i.pravatar.cc/150?img=12", status: "Offline" },
+  { id: 3, name: "Alice Ray", avatar: "https://i.pravatar.cc/150?img=13", status: "Online" },
 ];
 
 const App: React.FC = () => {
@@ -363,7 +364,7 @@ const App: React.FC = () => {
                 <div className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between p-2 px-3 bg-white/10 mobile-menu-bar sm:px-6 backdrop-blur-md xl:hidden">
                   <div className="text-lg font-medium name">
                     <a href="#" className="flex items-center gap-2 text-white">
-                      <img src="https://placehold.co/400" alt="logo" width={32} height={32} />
+                      <Image src="https://i.pravatar.cc/150?img=07" alt="logo" width={32} height={32} />
                     </a>
                   </div>
                   <button
@@ -440,8 +441,8 @@ const App: React.FC = () => {
                     href="#"
                     className="w-28 h-28 sm:w-36 sm:h-36 mb-2 block mx-auto border-4 sm:border-6 border-[#2f2f2f] overflow-hidden rounded-full *:w-full *:h-full *:rounded-full"
                   >
-                    <img
-                      src="https://placehold.co/400"
+                    <Image
+                      src="https://i.pravatar.cc/150?img=07"
                       className="block"
                       alt="Tony Stark"
                       width={144}
@@ -611,7 +612,7 @@ const App: React.FC = () => {
                           <div className="flex space-x-8 items-center">
                             {["Vapple", "Gooogle", "Fijma", "Gooogle Docs"].map((brand, index) => (
                               <div key={index} className="flex items-center justify-center">
-                                <img
+                                <Image
                                   src={`https://placehold.co/96x40?text=${encodeURIComponent(brand)}`}
                                   alt={`${brand} Logo`}
                                   width={96}
@@ -938,7 +939,7 @@ const App: React.FC = () => {
                           selectedUser?.id === user.id ? "bg-[#1E1E1E]" : "hover:bg-[#1A1A1A]"
                         }`}
                       >
-                        <img src={user.avatar} alt={user.name} className="w-9 h-9 rounded-full" />
+                        <Image src={user.avatar} alt={user.name} className="w-9 h-9 rounded-full" width={320} height={320} />
                         <div>
                           <p className="text-sm font-medium">{user.name}</p>
                           <p className="text-xs text-gray-400">{user.status}</p>
@@ -961,7 +962,7 @@ const App: React.FC = () => {
                           <ArrowLeft size={20} />
                         </button>
                       )}
-                      <img src={selectedUser.avatar} alt="User Avatar" className="w-10 h-10 rounded-full" />
+                      <Image src={selectedUser.avatar} alt="User Avatar" className="w-10 h-10 rounded-full" width={320} height={320} />
                       <div>
                         <h2 className="text-base font-semibold">{selectedUser.name}</h2>
                         <p className="text-sm text-gray-400">{selectedUser.status}</p>
@@ -979,10 +980,11 @@ const App: React.FC = () => {
                         }`}
                       >
                         {msg.sender !== "me" && (
-                          <img
+                          <Image
                             src={selectedUser.avatar}
                             alt="Sender"
-                            className="w-8 h-8 rounded-full"
+                            className="w-8 h-8 rounded-full "
+                            width={320} height={320}
                           />
                         )}
                         <div
